@@ -1,0 +1,14 @@
+{
+  "install_with_codex.py": "e4603ec27df7f028237b042b350f52c7ae535c24ec323f543b3610c5a9904389",
+  "magisk/core-service.sh": "2c9f80fba87cb25689bf342d3217afe1b98b26defe11a7599048c45e539ec881",
+  "magisk/device-install.sh": "cee3368985426a21666cbd93ad4e0d8cd27219bff673ba5d30b2c94c0d7e9810",
+  "magisk/module.prop": "4565b215778430e00c4f882a8143242f0e29789f554caa6f6adefed8a0e23c3d",
+  "magisk/service.sh": "1b877ae4acbef81f5b2fca149557045259dfb6f3024fa3bfa7e973bfc8808324",
+  "src/core/controller.py": "c12835762ebceb11ab1ad96a737b5a49e33ad7276cc63ea31ecd6b51804be63b",
+  "src/core/display-engine.jar": "6d3a0a1e34f9ca8c7cb686f5c2ad44bacf6163d2bbf299c0d98f67b8621c25c9",
+  "src/core/ui-test.jar": "4df35d250cab9b307bd8c3c2f6f318001e497cd928c07a9b92124888e8cd94da",
+  "src/java/DisplayEngine.java": "e4ee38f2840b50a4165ee7bd9b0ff2bd5b71a62dff517919f0998817c200ff26",
+  "src/java/VirtualUiTest.java": "931fce3841e49c174e8f48dd11d132c7f47207594ffd0efeda142dedac9bc702",
+  "src/relay/agent.py": "13a29e96d757a0af6e1aee1a0b86df772bbb4bd884c7495a89a319d9e3e28cfe",
+  "src/relay/tools.json": "5fee0d6259c217f9b0ac3a4cc9720d7303666fb1fa549378e26498d13dc41294"
+}

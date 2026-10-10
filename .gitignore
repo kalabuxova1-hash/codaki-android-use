@@ -1,0 +1,15 @@
+dist/
+release/
+site.tar.gz
+__pycache__/
+*.pyc
+config.json
+*.log
+*.sqlite3
+*.sqlite3-*
+*.secret
+.env
+.env.*
+credentials*
+private/
+build/
