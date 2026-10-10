@@ -4,7 +4,7 @@
 
 **Computer Use for Android · A companion plugin for Codaki Mini Codex**
 
-**English** · [Русский](README.ru.md) &nbsp; | &nbsp; **v0.0.2** · [MIT](LICENSE)
+**English** · [Русский](README.ru.md) &nbsp; | &nbsp; **v0.0.3** · [MIT](LICENSE)
 
 **Codaki Android Use adds Android app control to [Codaki Mini Codex — Миникодекс](https://github.com/kalabuxova1-hash/codaki-mini-codex).** An AI assistant can read the interface, find buttons, enter text and check results on a separate virtual display through **ChatGPT or Codex and MCP**.
 
@@ -59,11 +59,13 @@ This follows the [Computer Use interaction loop](https://platform.claude.com/doc
 
 ### Install with Codex
 
-1. **Download the setup ZIP.** Get `android-use-codex-setup-0.0.2.zip` from the [latest release](https://github.com/kalabuxova1-hash/codaki-android-use/releases/latest).
+1. **Download the setup ZIP.** Get `android-use-codex-setup-0.0.3.zip` from the [latest release](https://github.com/kalabuxova1-hash/codaki-android-use/releases/latest).
 
 2. **Give the ZIP to Codex on your PC.** Connect the intended phone and authorize USB debugging. The installation prompt is below.
 
 3. **Check the plugin connection.** Ask the connected plugin to open Settings on its virtual screen, inspect the result and stop the screen.
+
+**ChatGPT card ZIP:** [download `codaki-android-use-chatgpt-0.0.3.zip`](chatgpt/codaki-android-use-chatgpt-0.0.3.zip). It is also bundled inside the installer under `chatgpt/`. Import adds the workflows; connect your own phone after installation. The public ZIP has no author-specific App ID or device pairing. [Connect the card to your own server](chatgpt/README.md).
 
 <details>
 <summary><strong>Show the installation prompt for Codex</strong></summary>
@@ -75,6 +77,14 @@ The ZIP includes source, ready Dex JARs, the ADB installer and setup instruction
 You can also give Codex [INSTALL_WITH_CODEX.md](https://github.com/kalabuxova1-hash/codaki-android-use/releases/latest/download/INSTALL_WITH_CODEX.md). It points to the release ZIP and checksum.
 
 </details>
+
+### Update with GPT
+
+**A new version is out → download the new ZIP → give the file to GPT → ask it to update the plugin.**
+
+> Update this Codaki plugin from the new ZIP. Keep my phone connection, private server, keys, memory and journal. Check the version and checksum, update the existing card, and verify the connection. If this is the full installer, also update the phone components using INSTALL_WITH_CODEX.md.
+
+The bundled update workflow retains your existing App reference and ChatGPT owner binding. A card-only update leaves the phone runtime unchanged. GPT uses the client's available update/import tools; if the client requires a manual import, it prepares the replacement ZIP and tells you that final step. The file must come from this project's Releases. [Card setup and updates](chatgpt/README.md).
 
 **Initial setup needs a PC; normal use can continue with it powered off.**
 

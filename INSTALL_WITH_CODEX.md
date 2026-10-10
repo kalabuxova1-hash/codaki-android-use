@@ -1,10 +1,10 @@
 # Install Codaki Android Use with Codex on a PC
 
-**Release 0.0.2** · [English](#installation-workflow) · [Русский](#русский)
+**Release 0.0.3** · [English](#installation-workflow) · [Русский](#русский)
 
 Give this file or the setup ZIP to Codex **with an explicit request to install**. Codex should perform the available setup work itself. The owner supplies a rooted phone; the project does not install root, Magisk, firmware or a bootloader.
 
-If only this file was provided, download [android-use-codex-setup-0.0.2.zip](https://github.com/kalabuxova1-hash/codaki-android-use/releases/download/v0.0.2/android-use-codex-setup-0.0.2.zip) and [SHA256SUMS](https://github.com/kalabuxova1-hash/codaki-android-use/releases/download/v0.0.2/SHA256SUMS). Verify the ZIP's SHA-256, extract into a dedicated workspace and read AGENTS.md. The release packages source and ready Dex binaries.
+If only this file was provided, download [android-use-codex-setup-0.0.3.zip](https://github.com/kalabuxova1-hash/codaki-android-use/releases/download/v0.0.3/android-use-codex-setup-0.0.3.zip) and [SHA256SUMS](https://github.com/kalabuxova1-hash/codaki-android-use/releases/download/v0.0.3/SHA256SUMS). Verify the ZIP's SHA-256, extract into a dedicated workspace and read AGENTS.md. The release packages source and ready Dex binaries.
 
 ## Installation workflow
 
@@ -51,8 +51,8 @@ For a new installation, write `/data/adb/android-use-relay/config.json` with:
 ```json
 {
   "relay_url": "https://YOUR-PRIVATE-SITE.chatgpt.site",
-  "agent_token": "YOUR-FRESH-AGENT_TOKEN",
-  "sites_authorization": "YOUR-SITE-SERVICE-AUTHORIZATION",
+  "agent_token": "YOUR_FRESH_AGENT_TOKEN",
+  "sites_authorization": "YOUR_SITE_SERVICE_AUTHORIZATION",
   "stop_files": [
     "/data/adb/modules/android_use_relay/disable",
     "/data/adb/modules/android_use_relay/remove"
@@ -85,10 +85,33 @@ Disable **Android Use - Codaki Mini Codex helper** in Magisk to stop new relay w
 
 Передайте Codex на ПК этот файл или ZIP и напишите:
 
-> Установи Codaki Android Use 0.0.2 на мой подключённый телефон как помощника для Mini Codex. Прочитай INSTALL_WITH_CODEX.md, сам проверь требования, установи компоненты, создай мой отдельный приватный Site и подключи его плагин. Сохрани сервер и ключи Mini Codex. Root, Magisk и Termux с Python уже должны быть подготовлены; не меняй прошивку. Сохрани костыли автозакрытия экрана и установки с резервными копиями.
+> Установи Codaki Android Use 0.0.3 на мой подключённый телефон как помощника для Mini Codex. Прочитай INSTALL_WITH_CODEX.md, сам проверь требования, установи компоненты, создай мой отдельный приватный Site и подключи его плагин. Сохрани сервер и ключи Mini Codex. Root, Magisk и Termux с Python уже должны быть подготовлены; не меняй прошивку. Сохрани костыли автозакрытия экрана и установки с резервными копиями.
 
 Codex выполняет шаги выше самостоятельно, если доступны ADB, файловые инструменты, Sites и Plugin Creator. Нужны Android 16, Magisk и Python в Termux. Первое разрешение USB/root, вход в аккаунт и финальное подключение могут требовать вашего участия.
 
 В архиве есть готовый сервер, Java/Dex-компоненты, агент, установщик и тесты. Для удалённой работы нужен **свой приватный Site** с D1 `DB`, секретом **`AGENT_TOKEN`** и служебной авторизацией Sites. Ключи передаются отдельно, через stdin; в архиве их нет. Локальная установка без проверенного вызова плагина не означает готовое удалённое подключение.
 
 После проверки освободите виртуальный экран. Соединение отключается через модуль Android Use в Magisk. Mini Codex менять не нужно.
+
+## ChatGPT card ZIP / ZIP-карточка ChatGPT
+
+The installer includes `chatgpt/codaki-android-use-chatgpt-0.0.3.zip`, the plugin source and `chatgpt/package_card.py`. Import the public card to add setup/control workflows if your client supports archive import. Importing it never changes phone configuration or ownership. Follow the existing owner-private relay setup; the server pins the authenticated ChatGPT owner. For a connected card with these skills, use the registered App ID returned by that owner's Sites deployment: `python chatgpt/package_card.py --app-id APP_ID`. Keep the output in `.private/chatgpt/` private and retain the existing device setup. Never reuse the author's personal server/card.
+
+ZIP-карточка вложена в установщик. Её установка и подключение телефона — отдельные шаги; после настройки используется ID аккаунта ChatGPT нового владельца. В публичной карточке нет ID сервера автора, ключей или привязки устройства.
+
+### Update with GPT
+
+**A new version is out → download the new ZIP → give the file to GPT → ask it to update the plugin.**
+
+> Update this Codaki plugin from the new ZIP. Keep my phone connection, private server, keys, memory and journal. Check the version and checksum, update the existing card, and verify the connection. If this is the full installer, also update the phone components using INSTALL_WITH_CODEX.md.
+
+The bundled update workflow retains your existing App reference and ChatGPT owner binding. A card-only update leaves the phone runtime unchanged. GPT uses the client's available update/import tools; if the client requires a manual import, it prepares the replacement ZIP and tells you that final step. The file must come from this project's Releases. [Card setup and updates](chatgpt/README.md).
+
+
+### Обновление через GPT
+
+**Вышла новая версия → скачайте новый ZIP → передайте файл GPT → попросите обновить плагин.**
+
+> Обнови этот плагин Codaki из нового ZIP. Сохрани подключение моего телефона, личный сервер, ключи, память и журнал. Проверь версию и контрольную сумму, обнови существующую карточку и проверь связь. Если это полный установщик, также обнови компоненты телефона по INSTALL_WITH_CODEX.md.
+
+Встроенная инструкция обновления сохраняет существующий App ID и привязку к аккаунту ChatGPT владельца. Обновление одной карточки не меняет компоненты телефона. GPT использует доступные средства обновления/импорта; если клиент требует ручного импорта, он подготовит новый ZIP и укажет этот последний шаг. Берите файл из Releases этого проекта. [Настройка и обновление карточки](chatgpt/README.md).

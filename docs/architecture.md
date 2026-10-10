@@ -18,4 +18,4 @@ The agent has no incoming port. It verifies TLS, reuses HTTPS and journals norma
 
 Core refuses physical display 0 and missing isolation flags. The display owner has a ten-minute lease. The agent retains 120-second idle cleanup; Core removes verified virtual task stacks on stop; launch excludes tasks from Recents. Magisk starts transport/Core, not a virtual screen.
 
-Package version: 0.0.2. Preserved phone Core/module: 0.0.1. Relay protocol server: 1.1.0. These are separate component versions.
+Package version: 0.0.3. Preserved phone Core/module: 0.0.1. Relay protocol server: 1.1.0. These are separate component versions.

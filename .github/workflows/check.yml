@@ -1,0 +1,53 @@
+name: Check and package Android Use
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.14'
+      - run: npm test
+      - run: python -m unittest discover -s tests -p 'test_*.py'
+      - run: npm run build
+      - run: npm run validate
+      - run: python scripts/package.py
+  release:
+    needs: check
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: android-use-release
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.14'
+      - run: python scripts/package.py
+      - name: Publish Android Use 0.0.3 with ChatGPT card
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          if gh release view v0.0.3 >/dev/null 2>&1; then
+            echo 'Existing v0.0.3 release retained.'
+          else
+            gh release create v0.0.3 release/android-use-codex-setup-0.0.3.zip \
+              release/codaki-android-use-chatgpt-0.0.3.zip release/INSTALL_WITH_CODEX.md release/SHA256SUMS \
+              --target "$GITHUB_SHA" --title 'Codaki Android Use 0.0.3' --notes-file CHANGELOG.md
+          fi
