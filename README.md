@@ -70,7 +70,7 @@ This follows the [Computer Use interaction loop](https://platform.claude.com/doc
 <details>
 <summary><strong>Show the installation prompt for Codex</strong></summary>
 
-> Install Codaki Android Use 0.0.2 from this ZIP as a companion for Codaki Mini Codex on my connected phone. Confirm Mini Codex is already installed and configured. Read INSTALL_WITH_CODEX.md, check requirements, create my separate private relay and connect the plugin. Keep Mini Codex's server, keys and files unchanged.
+> Install Codaki Android Use 0.0.3 from this ZIP as a companion for Codaki Mini Codex on my connected phone. Confirm Mini Codex is already installed and configured. Read INSTALL_WITH_CODEX.md, check requirements, create my separate private relay and connect the plugin. Keep Mini Codex's server, keys and files unchanged.
 
 The ZIP includes source, ready Dex JARs, the ADB installer and setup instructions. Codex needs filesystem/shell access and Sites / Plugin Creator capabilities. USB/root authorization, account login and final connection may require your action. The installer does not root your phone or install Mini Codex; its presence must be confirmed before setup.
 
