@@ -1,14 +1,27 @@
-import importlib.util,json,tempfile,time,unittest,io
+import importlib.util,json,tempfile,time,unittest,io,sys
 from unittest.mock import patch
 from pathlib import Path
 
 path=Path(__file__).resolve().parents[1]/'src'/'relay'/'agent.py'
+sys.path.insert(0,str(path.parent))
 agent=None
 if path.exists():
     spec=importlib.util.spec_from_file_location('agent',path)
     agent=importlib.util.module_from_spec(spec);spec.loader.exec_module(agent)
 
 class AgentTests(unittest.TestCase):
+    def test_route_change_reconnects_without_repeating_a_request(self):
+        opened=[];closed=[]
+        class Connection:
+            def __init__(self,host,port,**kwargs):opened.append((host,port))
+            def set_tunnel(self,*args):pass
+            def close(self):closed.append(True)
+        config={'relay_url':'https://relay.example','agent_token':'a'*64,'sites_authorization':'access'}
+        with patch('urllib.request.getproxies',return_value={'https':'http://127.0.0.1:17890'}), patch.object(agent,'choose_proxy',side_effect=['http://127.0.0.1:17890','http://127.0.0.1:17890','','http://127.0.0.1:17890']):
+            relay=agent.Relay(config,connection_factory=Connection)
+            relay.connect();relay.connect();relay.connect();relay.close()
+        self.assertEqual(opened,[('127.0.0.1',17890),('relay.example',443),('127.0.0.1',17890)])
+        self.assertEqual(len(closed),3)
     def setUp(self):
         self.assertIsNotNone(agent,'Phone transport has not been implemented')
         self.tmp=tempfile.TemporaryDirectory();self.addCleanup(self.tmp.cleanup)

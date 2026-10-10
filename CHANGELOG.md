@@ -7,7 +7,9 @@ Includes an update skill: give GPT a newer ZIP to prepare/apply an update while 
 - Include the portable ChatGPT card ZIP, source manifest, icon, setup/control skills and private App-reference builder in the installer and release assets.
 - Keep card import separate from device pairing; public cards contain no owner App ID or phone credentials.
 - Add reproducible card packaging checks and release automation.
-- Phone runtime and the original installer remain byte-for-byte preserved.
+- Preserve the 0.0.1 display engine, Unicode input, launch and idle cleanup workarounds.
+- Fix relay uploads when Shadow VLESS is in standby behind another Android VPN: choose the system route from fresh trusted local status, and restore the configured proxy when standby ends. Settings and credentials are preserved.
+- Show 0.0.3 in Magisk and the MCP server; keep executable installer backups disabled at boot.
 
 ## 0.0.2
 

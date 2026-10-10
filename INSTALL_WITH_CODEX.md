@@ -44,7 +44,7 @@ From the extracted package, run:
 python install_with_codex.py --serial SERIAL
 ```
 
-The existing installer verifies the two JAR digests, places Core/relay files, installs startup scripts, keeps previous copies as `.android-use-001.bak` and runs the local controller check. Its replacement behavior remains unchanged. Existing private `config.json` is preserved.
+The existing installer verifies the two JAR digests, places Core/relay files, installs startup scripts, keeps previous copies as `.android-use-001.bak` and runs the local controller check. Backup copies are non-executable, preventing duplicate boot services. The relay respects Shadow VLESS standby behind another Android VPN without changing private network settings. Existing private `config.json` is preserved.
 
 For a new installation, write `/data/adb/android-use-relay/config.json` with:
 

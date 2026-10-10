@@ -127,6 +127,8 @@ def core_call(name,args):
             return result
         except (OSError,ValueError,KeyError) as exc:raise Uncertain('Core connection failed after dispatch') from exc
 
+from network_route import choose_proxy
+
 class Relay:
     def __init__(self,config,connection_factory=None):
         url=urllib.parse.urlparse(config['relay_url'])
@@ -137,7 +139,9 @@ class Relay:
         self.headers={'Authorization':'Bearer '+token,'OAI-Sites-Authorization':'Bearer '+bypass,'Accept':'application/json'}
         self.context=ssl.create_default_context();self.connection_factory=connection_factory or http.client.HTTPSConnection
         self.host=url.hostname;self.port=url.port or 443;self.connection=None
-        self.proxy=urllib.request.getproxies().get('https')
+        self.configured_proxy=urllib.request.getproxies().get('https') or ''
+        self.selected_proxy=choose_proxy(self.configured_proxy)
+        self.proxy=self.selected_proxy
         if self.proxy:
             proxy=urllib.parse.urlparse(self.proxy)
             if proxy.scheme!='http' or not proxy.hostname or proxy.username or proxy.password or proxy.query or proxy.fragment or proxy.path not in ('','/'):raise ValueError('Unsupported HTTPS proxy configuration')
@@ -145,6 +149,11 @@ class Relay:
     def close(self):
         if self.connection is not None:self.connection.close();self.connection=None
     def connect(self):
+        selected=choose_proxy(self.configured_proxy)
+        if selected!=self.selected_proxy:
+            self.close();self.selected_proxy=selected
+            parsed=urllib.parse.urlparse(selected) if selected else None
+            self.proxy=(parsed.hostname,parsed.port or 80) if parsed else None
         if self.connection is None:
             host,port=self.proxy or (self.host,self.port)
             self.connection=self.connection_factory(host,port,timeout=25,context=self.context)

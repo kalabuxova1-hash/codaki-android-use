@@ -167,7 +167,7 @@ export default {async fetch(request,env){
   if(rpc.id===undefined&&rpc.method.startsWith('notifications/'))return new Response(null,{status:202});
   let response;
   if(rpc.method==='server/discover')response={supportedVersions:['2026-07-28','2025-03-26'],capabilities:{tools:{}}};
-  else if(rpc.method==='initialize')response={protocolVersion:['2026-07-28','2025-06-18','2025-03-26','2024-11-05'].includes(rpc.params?.protocolVersion)?rpc.params.protocolVersion:'2025-03-26',capabilities:{tools:{}},serverInfo:{name:'Android Use',version:'1.1.0'},instructions};
+  else if(rpc.method==='initialize')response={protocolVersion:['2026-07-28','2025-06-18','2025-03-26','2024-11-05'].includes(rpc.params?.protocolVersion)?rpc.params.protocolVersion:'2025-03-26',capabilities:{tools:{}},serverInfo:{name:'Android Use',version:'0.0.3'},instructions};
   else if(rpc.method==='ping')response={};
   else if(rpc.method==='tools/list')response={tools};
   else if(rpc.method==='tools/call'){

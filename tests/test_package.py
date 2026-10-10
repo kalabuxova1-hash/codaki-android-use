@@ -43,7 +43,7 @@ class PackageTests(unittest.TestCase):
             root=Path(d);(root/'src/relay').mkdir(parents=True)
             (root/'src/relay/config.json').write_text('{"agent_token":"DO_NOT_PUBLISH"}')
             self.assertNotIn('src/relay/config.json',package.source_files(root))
-    def test_existing_runtime_and_workarounds_match_original_release(self):
+    def test_verified_runtime_and_workarounds_match_manifest(self):
         expected=json.loads((ROOT/'docs/preserved-runtime.json').read_text())
         for name,digest in expected.items():
             raw=(ROOT/name).read_bytes()

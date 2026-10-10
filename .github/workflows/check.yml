@@ -45,7 +45,11 @@ jobs:
           GH_REPO: ${{ github.repository }}
         run: |
           if gh release view v0.0.3 >/dev/null 2>&1; then
-            echo 'Existing v0.0.3 release retained.'
+            printf "%s\n" "$GITHUB_SHA" > release/SOURCE_COMMIT.txt
+            gh release upload v0.0.3 release/android-use-codex-setup-0.0.3.zip release/codaki-android-use-chatgpt-0.0.3.zip release/INSTALL_WITH_CODEX.md release/SHA256SUMS release/SOURCE_COMMIT.txt --clobber
+            cp CHANGELOG.md release/release-notes.md
+            printf "\nMaintenance assets rebuilt from source commit %s. The original release tag is retained.\n" "$GITHUB_SHA" >> release/release-notes.md
+            gh release edit v0.0.3 --notes-file release/release-notes.md
           else
             gh release create v0.0.3 release/android-use-codex-setup-0.0.3.zip \
               release/codaki-android-use-chatgpt-0.0.3.zip release/INSTALL_WITH_CODEX.md release/SHA256SUMS \

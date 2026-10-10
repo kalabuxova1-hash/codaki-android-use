@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Codex-led Android Use v0.0.1 deployment; root/Magisk must already exist."""
+"""Codex-led Android Use v0.0.3 deployment; root/Magisk must already exist."""
 import argparse
 import hashlib
 from pathlib import Path
@@ -15,6 +15,8 @@ FILES = {
     "display-engine.jar": "src/core/display-engine.jar",
     "ui-test.jar": "src/core/ui-test.jar",
     "agent.py": "src/relay/agent.py",
+    "network_route.py": "src/relay/network_route.py",
+    "network_route.py": "src/relay/network_route.py",
     "tools.json": "src/relay/tools.json",
     "module.prop": "magisk/module.prop",
     "service.sh": "magisk/service.sh",
@@ -33,7 +35,7 @@ def run(command):
     return result.stdout
 
 def main():
-    parser = argparse.ArgumentParser(description="Install Android Use v0.0.1 via authorized ADB")
+    parser = argparse.ArgumentParser(description="Install Android Use v0.0.3 via authorized ADB")
     parser.add_argument("--serial", required=True, help="Exact authorized adb device serial")
     options = parser.parse_args()
     serial = options.serial
@@ -69,7 +71,7 @@ def main():
         print(root("/system/bin/sh " + STAGE + "/device-install.sh").strip())
     finally:
         adb("shell", "rm -rf " + STAGE)
-    print("Local Android Use 0.0.1 deployed. Codex: verify status and configure a private relay separately.")
+    print("Local Android Use 0.0.3 deployed. Codex: verify status and configure a private relay separately.")
 
 if __name__ == "__main__":
     try:
