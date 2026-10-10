@@ -1,5 +1,7 @@
 # Codaki Android Use
 
+![Codaki — Desktop freedom. Android.](docs/assets/codaki-cover.png)
+
 **Computer Use for Android · A companion plugin for Codaki Mini Codex**
 
 **English** · [Русский](README.ru.md) &nbsp; | &nbsp; **v0.0.2** · [MIT](LICENSE)
@@ -9,6 +11,8 @@
 **An Android analogue of the Computer Use approach: observe → act → check.** Codaki Mini Codex handles system tasks, files and phone maintenance; **Codaki Android Use** extends it with visual interaction inside apps.
 
 > **Codaki Mini Codex is required.** Install and configure it first. Codaki Android Use is a companion plugin; standalone use without Mini Codex is not supported.
+
+**Desktop freedom. Android.** Bring the observe → act → check workflow to your phone from an ordinary ChatGPT conversation: Codaki Mini Codex handles files and system tasks; Android Use adds app interaction on its own screen.
 
 [Install the plugin](#codaki-install) · [How it helps](#codaki-features) · [Documentation](#codaki-docs) · [Download release](https://github.com/kalabuxova1-hash/codaki-android-use/releases/latest)
 
@@ -83,6 +87,17 @@ You can also give Codex [INSTALL_WITH_CODEX.md](https://github.com/kalabuxova1-h
 ## <img src="https://raw.githubusercontent.com/kalabuxova1-hash/codaki-mini-codex/main/docs/assets/icons/book.svg" width="36" height="36" alt=""> Codaki Android Use documentation
 
 Open the topic you need.
+
+<details>
+<summary><strong>Ordinary ChatGPT chat, ongoing use and usage costs</strong></summary>
+
+Control the phone through your personal Codaki plugin in a supported ChatGPT chat. Codaki's phone worker executes actions locally; it does not run a second model API session. The supported ChatGPT plugin flow needs no separate OpenAI API key, and Codaki itself adds no per-token fee.
+
+Continue with new tasks and reuse saved solutions between conversations. This is designed for ongoing use after setup, not a guarantee of an infinitely long chat or uninterrupted background work. ChatGPT still uses tokens and context, and your account's [usage limits](https://learn.chatgpt.com/docs/pricing) still apply. Private relay hosting may have its own costs.
+
+The goal is broad phone access comparable in spirit to Codex on a PC. Android permissions, supported tools and device compatibility determine the actual scope; feature parity with desktop Codex is not claimed.
+
+</details>
 
 <details>
 <summary><strong>App control, virtual display and session cleanup</strong></summary>

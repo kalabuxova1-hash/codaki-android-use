@@ -1,5 +1,7 @@
 # Codaki Android Use
 
+![Codaki — Desktop freedom. Android.](docs/assets/codaki-cover.png)
+
 **Computer Use для Android · Плагин-дополнение для Codaki Mini Codex**
 
 [English](README.md) · **Русский** &nbsp; | &nbsp; **v0.0.2** · [MIT](LICENSE)
@@ -9,6 +11,8 @@
 **Аналог подхода Computer Use для Android: увидеть → выполнить → проверить.** Codaki Mini Codex отвечает за системные задачи, файлы и обслуживание телефона. **Codaki Android Use** добавляет работу с интерфейсом внутри приложений.
 
 > **Codaki Mini Codex обязателен.** Сначала установите и настройте его. Codaki Android Use — плагин-дополнение; самостоятельная работа без Миникодекса не поддерживается.
+
+**Свобода действий на Android, как на ПК.** Управляйте телефоном из обычного чата ChatGPT по циклу увидеть → выполнить → проверить: Codaki Mini Codex отвечает за файлы и систему, Android Use — за приложения на собственном экране.
 
 [Установить плагин](#codaki-install) · [Чем он помогает](#codaki-features) · [Документация](#codaki-docs) · [Скачать выпуск](https://github.com/kalabuxova1-hash/codaki-android-use/releases/latest)
 
@@ -83,6 +87,17 @@
 ## <img src="https://raw.githubusercontent.com/kalabuxova1-hash/codaki-mini-codex/main/docs/assets/icons/book.svg" width="36" height="36" alt=""> Документация Codaki Android Use
 
 Откройте нужную тему.
+
+<details>
+<summary><strong>Обычный чат ChatGPT, длительное использование и расходы</strong></summary>
+
+Управляйте телефоном через личный плагин Codaki в поддерживаемом чате ChatGPT. Агент выполняет действия локально на Android и не запускает вторую сессию модельного API. Для этого подключения отдельный API-ключ OpenAI не нужен; сам Codaki не берёт плату за токены.
+
+Продолжайте новые задачи и используйте сохранённые решения между чатами. Проект рассчитан на регулярную работу после настройки, но не обещает бесконечную длину чата или непрерывную фоновую работу. ChatGPT по-прежнему использует токены и контекст; действуют [лимиты аккаунта](https://learn.chatgpt.com/docs/pricing). У приватного сервера могут быть собственные расходы.
+
+Цель — широкий доступ к телефону, по духу близкий к Codex на ПК. Реальные возможности зависят от разрешений Android, доступных инструментов и совместимости; полное равенство функций с настольным Codex не заявляется.
+
+</details>
 
 <details>
 <summary><strong>Управление приложениями, виртуальный экран и автозакрытие</strong></summary>
