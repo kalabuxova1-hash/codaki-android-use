@@ -1,4 +1,6 @@
-# Installation
+# Codaki Android Use installation
+
+**Codaki Mini Codex must be installed and configured first. Standalone use is not supported. / Сначала установите и настройте Codaki Mini Codex; самостоятельная работа не поддерживается.**
 
 Give [INSTALL_WITH_CODEX.md](../INSTALL_WITH_CODEX.md) or the release ZIP to Codex on your PC with an installation request. It contains prerequisites, the private Site setup, credential transfer and connected-plugin verification.
 
@@ -8,7 +10,7 @@ The replacement-with-backups installer and two-minute idle cleanup are retained.
 
 ## Русский
 
-Скачайте ZIP в [Releases](https://github.com/kalabuxova1-hash/android-use-mini-codex/releases/latest), передайте Codex на ПК и попросите установить Android Use. Полная инструкция — [INSTALL_WITH_CODEX.md](../INSTALL_WITH_CODEX.md#русский).
+Скачайте ZIP в [Releases](https://github.com/kalabuxova1-hash/codaki-android-use/releases/latest), передайте Codex на ПК и попросите установить Android Use. Полная инструкция — [INSTALL_WITH_CODEX.md](../INSTALL_WITH_CODEX.md#русский).
 
 Нужны Android 16, Magisk root, Termux с Python и разрешённая отладка для конкретного ПК. Для отдельного приватного подключения Codex нужны Sites / Plugin Creator. После настройки включённый ПК не нужен.
 

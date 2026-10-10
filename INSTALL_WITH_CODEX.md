@@ -1,14 +1,16 @@
-# Install Android Use with Codex on a PC
+# Install Codaki Android Use with Codex on a PC
 
 **Release 0.0.2** · [English](#installation-workflow) · [Русский](#русский)
 
 Give this file or the setup ZIP to Codex **with an explicit request to install**. Codex should perform the available setup work itself. The owner supplies a rooted phone; the project does not install root, Magisk, firmware or a bootloader.
 
-If only this file was provided, download [android-use-codex-setup-0.0.2.zip](https://github.com/kalabuxova1-hash/android-use-mini-codex/releases/download/v0.0.2/android-use-codex-setup-0.0.2.zip) and [SHA256SUMS](https://github.com/kalabuxova1-hash/android-use-mini-codex/releases/download/v0.0.2/SHA256SUMS). Verify the ZIP's SHA-256, extract into a dedicated workspace and read AGENTS.md. The release packages source and ready Dex binaries.
+If only this file was provided, download [android-use-codex-setup-0.0.2.zip](https://github.com/kalabuxova1-hash/codaki-android-use/releases/download/v0.0.2/android-use-codex-setup-0.0.2.zip) and [SHA256SUMS](https://github.com/kalabuxova1-hash/codaki-android-use/releases/download/v0.0.2/SHA256SUMS). Verify the ZIP's SHA-256, extract into a dedicated workspace and read AGENTS.md. The release packages source and ready Dex binaries.
 
 ## Installation workflow
 
 ### 1. Prerequisites and scope
+
+**[Codaki Mini Codex](https://github.com/kalabuxova1-hash/codaki-mini-codex) must already be installed and configured. Codaki Android Use is a companion; standalone use is not supported. Confirm this prerequisite before proceeding. The installer does not enforce this check or install Mini Codex.**
 
 - Phone: Android 16 / SDK 36 or later, preinstalled Magisk and Termux Python 3.10+. Initially verified on Redmi Turbo 3; other devices need validation. Core checks required display flags at runtime and refuses unsupported systems.
 - PC: Codex with shell/file access, Python 3.10+ and ADB. Put the selected ADB directory in the process PATH; the installer finds `adb` there. Node.js 24+ builds the relay; Java/Javac run its Java tests.
@@ -79,9 +81,11 @@ Disable **Android Use - Codaki Mini Codex helper** in Magisk to stop new relay w
 
 ## Русский
 
+**Сначала установите и настройте [Codaki Mini Codex](https://github.com/kalabuxova1-hash/codaki-mini-codex). Codaki Android Use — дополнение; самостоятельная работа без Миникодекса не поддерживается. Подтвердите это условие до установки: установщик не проверяет наличие Mini Codex и не устанавливает его.**
+
 Передайте Codex на ПК этот файл или ZIP и напишите:
 
-> Установи Android Use 0.0.2 на мой подключённый телефон как помощника для Mini Codex. Прочитай INSTALL_WITH_CODEX.md, сам проверь требования, установи компоненты, создай мой отдельный приватный Site и подключи его плагин. Сохрани сервер и ключи Mini Codex. Root, Magisk и Termux с Python уже должны быть подготовлены; не меняй прошивку. Сохрани костыли автозакрытия экрана и установки с резервными копиями.
+> Установи Codaki Android Use 0.0.2 на мой подключённый телефон как помощника для Mini Codex. Прочитай INSTALL_WITH_CODEX.md, сам проверь требования, установи компоненты, создай мой отдельный приватный Site и подключи его плагин. Сохрани сервер и ключи Mini Codex. Root, Magisk и Termux с Python уже должны быть подготовлены; не меняй прошивку. Сохрани костыли автозакрытия экрана и установки с резервными копиями.
 
 Codex выполняет шаги выше самостоятельно, если доступны ADB, файловые инструменты, Sites и Plugin Creator. Нужны Android 16, Magisk и Python в Termux. Первое разрешение USB/root, вход в аккаунт и финальное подключение могут требовать вашего участия.
 

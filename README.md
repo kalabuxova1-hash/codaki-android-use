@@ -1,18 +1,91 @@
-# Android Use
+# Codaki Android Use
 
-**Release 0.0.2**
+**Computer Use for Android · A companion plugin for Codaki Mini Codex**
 
-**Computer Use for Android — a companion for [Mini Codex](https://github.com/kalabuxova1-hash/codaki-mini-codex).**
+**English** · [Русский](README.ru.md) &nbsp; | &nbsp; **v0.0.2** · [MIT](LICENSE)
 
-[English](README.md) · [Русский](README.ru.md) · [Download setup ZIP](https://github.com/kalabuxova1-hash/android-use-mini-codex/releases/latest) · [Support on Boosty](https://boosty.to/mini_codexandroid)
+**Codaki Android Use adds Android app control to [Codaki Mini Codex — Миникодекс](https://github.com/kalabuxova1-hash/codaki-mini-codex).** An AI assistant can read the interface, find buttons, enter text and check results on a separate virtual display through **ChatGPT or Codex and MCP**.
 
-Android Use lets an AI assistant open Android apps, read their interface, find buttons, enter text and verify results. It brings the Computer Use approach to Android: **observe → act → check**, through MCP tools and a separate virtual screen.
+**An Android analogue of the Computer Use approach: observe → act → check.** Codaki Mini Codex handles system tasks, files and phone maintenance; **Codaki Android Use** extends it with visual interaction inside apps.
 
-Mini Codex handles system tasks, files and phone maintenance. Android Use adds app interaction on its own display. The two can work together, with separate relay configuration and credentials.
+> **Codaki Mini Codex is required.** Install and configure it first. Codaki Android Use is a companion plugin; standalone use without Mini Codex is not supported.
 
-> Early release. Verified on a Redmi Turbo 3 running Android 16 with Magisk and Termux. Other devices and Android versions have not been validated. This is an independent project, unaffiliated with OpenAI or Android.
+[Install the plugin](#codaki-install) · [How it helps](#codaki-features) · [Documentation](#codaki-docs) · [Download release](https://github.com/kalabuxova1-hash/codaki-android-use/releases/latest)
 
-## Why use it?
+<br>
+
+<a name="codaki-features"></a>
+
+## How Codaki Android Use helps
+
+<table>
+<tr>
+<td align="center" valign="top" width="56"><img src="https://raw.githubusercontent.com/kalabuxova1-hash/codaki-mini-codex/main/docs/assets/icons/phone.svg" width="40" height="40" alt=""></td>
+<td valign="top"><strong>Work inside Android apps</strong><p>Open Settings, calculate a result or search in an app. Read interface elements, click by text, type Unicode and check the outcome.</p></td>
+</tr>
+<tr>
+<td align="center" valign="top" width="56"><img src="https://raw.githubusercontent.com/kalabuxova1-hash/codaki-mini-codex/main/docs/assets/icons/files.svg" width="40" height="40" alt=""></td>
+<td valign="top"><strong>Complete the Codaki workflow</strong><p>Use Codaki Mini Codex for files and phone maintenance, then Codaki Android Use for app screens. Each component keeps its own private relay and credentials.</p></td>
+</tr>
+<tr>
+<td align="center" valign="top" width="56"><img src="https://raw.githubusercontent.com/kalabuxova1-hash/codaki-mini-codex/main/docs/assets/icons/memory.svg" width="40" height="40" alt=""></td>
+<td valign="top"><strong>Give the assistant its own screen</strong><p>Run apps on a separate virtual display. After initial setup, daily use requires no running PC; ChatGPT or Codex, internet and your private relay are still needed.</p></td>
+</tr>
+</table>
+
+### Try asking Codaki
+
+- “Open the calculator on the Android Use screen and calculate 125 × 8.”
+- “Open Settings, find About phone and check that it opened.”
+- “Find the search field, enter this text and show the results.”
+
+This follows the [Computer Use interaction loop](https://platform.claude.com/docs/en/agents-and-tools/tool-use/computer-use-tool) on Android. It is an independent implementation, not an official Computer Use product.
+
+<br>
+
+<a name="codaki-install"></a>
+
+## <img src="https://raw.githubusercontent.com/kalabuxova1-hash/codaki-mini-codex/main/docs/assets/icons/wrench.svg" width="36" height="36" alt=""> Install Codaki Android Use
+
+### Prepare your phone
+
+- **[Codaki Mini Codex](https://github.com/kalabuxova1-hash/codaki-mini-codex) installed and configured first.** This is the required base for the supported setup.
+- **Android 16 / SDK 36+**, root and Magisk already installed; **Termux with Python 3.10+**.
+- A PC with Codex and authorized ADB for initial setup, plus your own private relay and plugin connection.
+
+### Install with Codex
+
+1. **Download the setup ZIP.** Get `android-use-codex-setup-0.0.2.zip` from the [latest release](https://github.com/kalabuxova1-hash/codaki-android-use/releases/latest).
+
+2. **Give the ZIP to Codex on your PC.** Connect the intended phone and authorize USB debugging. The installation prompt is below.
+
+3. **Check the plugin connection.** Ask the connected plugin to open Settings on its virtual screen, inspect the result and stop the screen.
+
+<details>
+<summary><strong>Show the installation prompt for Codex</strong></summary>
+
+> Install Codaki Android Use 0.0.2 from this ZIP as a companion for Codaki Mini Codex on my connected phone. Confirm Mini Codex is already installed and configured. Read INSTALL_WITH_CODEX.md, check requirements, create my separate private relay and connect the plugin. Keep Mini Codex's server, keys and files unchanged.
+
+The ZIP includes source, ready Dex JARs, the ADB installer and setup instructions. Codex needs filesystem/shell access and Sites / Plugin Creator capabilities. USB/root authorization, account login and final connection may require your action. The installer does not root your phone or install Mini Codex; its presence must be confirmed before setup.
+
+You can also give Codex [INSTALL_WITH_CODEX.md](https://github.com/kalabuxova1-hash/codaki-android-use/releases/latest/download/INSTALL_WITH_CODEX.md). It points to the release ZIP and checksum.
+
+</details>
+
+**Initial setup needs a PC; normal use can continue with it powered off.**
+
+[Full installation workflow](INSTALL_WITH_CODEX.md) · [Requirements and disabling the module](docs/installation.md)
+
+<br>
+
+<a name="codaki-docs"></a>
+
+## <img src="https://raw.githubusercontent.com/kalabuxova1-hash/codaki-mini-codex/main/docs/assets/icons/book.svg" width="36" height="36" alt=""> Codaki Android Use documentation
+
+Open the topic you need.
+
+<details>
+<summary><strong>App control, virtual display and session cleanup</strong></summary>
 
 - **A separate screen with its own focus.** Verified sessions kept physical display 0 in focus while apps ran on the virtual display. Apps may still have device-wide effects such as notifications or messages; a virtual display is not an app-data sandbox.
 - **Understand the interface.** Android's built-in `UiAutomation` returns text, resource IDs, classes and bounds. Select visible buttons by text instead of relying on guessed coordinates.
@@ -24,23 +97,10 @@ Mini Codex handles system tasks, files and phone maintenance. Android Use adds a
 - **Bounded sessions.** The phone agent requests display cleanup after two minutes of idle time; the display also has a ten-minute lease. Removing it destroys its content instead of moving its windows to the main screen.
 - **Controlled execution.** Owner authentication, a root-only local socket, unique request IDs and a persistent job journal protect against automatic action replay after uncertain failures.
 
-## Install: give the file to Codex on your PC
+</details>
 
-**The recommended installation method is the setup ZIP.**
-
-1. Download **`android-use-codex-setup-0.0.2.zip`** from [Releases](https://github.com/kalabuxova1-hash/android-use-mini-codex/releases/latest).
-2. Connect your rooted Android 16 phone to the PC and authorize USB debugging. Install Termux and its Python package first.
-3. Give the ZIP to **Codex on the PC**, or extract it into a folder Codex can access. Send:
-
-   > Install Android Use from this ZIP as a companion for Mini Codex on my connected phone. Read INSTALL_WITH_CODEX.md, run the prerequisite checks, create my separate private relay and connect the plugin. Keep Mini Codex's server and keys unchanged.
-
-The ZIP includes source, ready-to-use Dex JARs, the existing ADB installer and the complete installation workflow. Codex can perform setup with filesystem/shell access and the Sites / Plugin Creator capabilities. Initial USB authorization, Magisk permission, account login and a final connection prompt may require your action. The installer does not root the phone or install Mini Codex.
-
-**You can also download only [INSTALL_WITH_CODEX.md](https://github.com/kalabuxova1-hash/android-use-mini-codex/releases/latest/download/INSTALL_WITH_CODEX.md)** and give that file to Codex. It directs Codex to the release ZIP and its checksum.
-
-For requirements, exact commands, verification and disabling the module, see [Installation](docs/installation.md).
-
-## What is included?
+<details>
+<summary><strong>Components and MCP tools</strong></summary>
 
 | Component | Purpose |
 | --- | --- |
@@ -52,15 +112,10 @@ For requirements, exact commands, verification and disabling the module, see [In
 
 There are **14 Core tools**, plus `android_job_result` for pending relay jobs: privileges, start, stop, status, app launch, tap, swipe, key, windows, screenshot, UI inspection, click by text, set text and batch execution. See [Tools](docs/tools.md) and [Architecture](docs/architecture.md).
 
-## Examples
+</details>
 
-- “Open the calculator on the Android Use screen and calculate 125 × 8.”
-- “Open Settings, find About phone and check that it opened.”
-- “Find the search field, enter this text and show the results.”
-
-Sending a message requires your explicit instruction with the intended recipient and content. The assistant should verify the result and release the display when finished.
-
-## Performance we measured
+<details>
+<summary><strong>Measured performance</strong></summary>
 
 On the same test phone, after the current optimizations:
 
@@ -72,7 +127,21 @@ On the same test phone, after the current optimizations:
 
 Two MCP batches containing nine Settings operations took **11.0 seconds of total tool execution time**. This excludes model reasoning between calls. It is **not an SMS-send benchmark** or a guarantee for other apps, networks or devices. See [Performance notes](docs/performance.md).
 
-## Development
+</details>
+
+<details>
+<summary><strong>Compatibility, limitations and owner control</strong></summary>
+
+**Verified:** Redmi Turbo 3, Android 16, Magisk and Termux. Other devices, reboot behavior, secure-lock behavior and a fresh full cloud installation by another owner are not yet validated. Unsupported display flags cause Core to fail rather than use the physical screen.
+
+The separate display does not isolate app data: apps may still change data, send messages or generate notifications. Sending a message requires your explicit instruction with recipient and content. The assistant should check the result and release the display.
+
+Mini Codex is a prerequisite of the supported setup. This documentation requirement is not an automatic installer check or a shared-server integration.
+
+</details>
+
+<details>
+<summary><strong>Development and verification</strong></summary>
 
 Python 3.10+ and Node.js 24+ are needed for the host checks. Java/Javac are needed for the UI adapter tests; Android SDK D8 is needed only to rebuild the bundled Dex.
 
@@ -86,10 +155,14 @@ python scripts/package.py
 
 No npm dependencies are required. The public hosting manifest has no project identity: provision a new private Site for each owner. Never commit phone `config.json`, access tokens, journals or private screen captures.
 
-Reboot behavior, secure-lock behavior, other devices and a fresh full cloud installation by another owner are not yet validated. Required virtual-display flags are checked at runtime; unsupported systems fail instead of falling back to the physical screen.
+</details>
 
-## Support development
+<br>
 
-If the project helps you, you can support Mini Codex and Android Use on **[Boosty](https://boosty.to/mini_codexandroid)**. Contributions, reproducible bug reports and compatibility reports are welcome.
+## <img src="https://raw.githubusercontent.com/kalabuxova1-hash/codaki-mini-codex/main/docs/assets/icons/heart.svg" width="36" height="36" alt=""> Support Codaki
 
-[MIT license](LICENSE).
+Support **Codaki Mini Codex and Codaki Android Use** on [Boosty](https://boosty.to/mini_codexandroid). Contributions, reproducible bug reports and compatibility reports are welcome. Source and public releases remain free under the **MIT license**.
+
+---
+
+**Codaki Android Use** is an independent open-source project, unaffiliated with OpenAI or Android. [MIT license](LICENSE).
